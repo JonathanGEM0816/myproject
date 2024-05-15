@@ -1,30 +1,35 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
 }
 
+/* Unmoved Background */
 .background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('image/bgDEMO.JPG');
+    background-image: url('image/bgJONATHAN2.jpg'); /* Change BG Picture Here */
     background-size: cover;
     background-position: center;
-    filter: blur(5px);
+    filter: blur(2px);
     z-index: -2;
 }
 
-
-
+/* Container */
 .container {
     width: calc(100% - 400px);
     margin: 0 auto;
 }
 
-
+/* Icons */
 header {
     display: flex;
     justify-content: space-between;
@@ -32,13 +37,11 @@ header {
     padding: 20px;
 }
 
-
 .icon {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
-
 
 .icon li {
     margin: 15px; 
@@ -46,19 +49,17 @@ header {
     transition: transform 0.7s;
 }
 
-
 .icon li:hover {
     transform: scale(1.1);
 }
 
-
+/* Side Navbar */
 .side-navbar {
     position: fixed;
     top: 150px;
     right: 225px;
-    z-index: 1;
+    z-index: 5;
 }
-
 
 .side-navbar ul {
     list-style-type: none;
@@ -66,11 +67,9 @@ header {
     margin: 0;
 }
 
-
 .side-navbar ul li {
     margin-bottom: 35px;
 }
-
 
 .side-navbar ul li a {
     display: block;
@@ -80,7 +79,6 @@ header {
     transition: transform 0.3s;
     position: relative;
 }
-
 
 .side-navbar ul li a::after {
     content: '';
@@ -93,7 +91,6 @@ header {
     transition: height 0.5s;
 }
 
-
 .side-navbar ul li a:hover::after {
     height: 100%;
 }
@@ -103,14 +100,13 @@ header {
     height: 120px;
 }
 
-
+/* Name Section */
 .name {
     position: relative;
     top: 50%;
     transform: translateY(50%);
     text-align: center;
 }
-
 
 .name h1 {
     font-size: 118px;
@@ -119,7 +115,6 @@ header {
     letter-spacing: 15px;
     color: aliceblue;
 }
-
 
 .name h3 {
     margin-top: -80px;
@@ -135,10 +130,10 @@ header {
 }
 
 
+/* Music Page */
 .musicpage.fade-in {
     animation: fade-in 3s forwards;
 }
-
 
 @keyframes fade-in {
     from {
@@ -149,22 +144,9 @@ header {
     }
 }
 
-
 .musicpage {
     position: relative;
 }
-
-
-.albumpicture {
-    position: absolute;
-    top: 43%;
-    left: 39%;
-    transform: translate(-50%, -50%);
-    width: 33%;
-    height: auto;
-    z-index: 1;
-}
-
 
 .titleMUSIC {
     position: absolute;
@@ -174,7 +156,6 @@ header {
     height: auto;
 }
 
-
 .title-NEW {
     position: absolute;
     top: 8.5%;
@@ -183,6 +164,20 @@ header {
     height: auto;
 }
 
+.albumpicture {
+    position: absolute;
+    top: 43%;
+    left: 39%;
+    transform: translate(-50%, -50%);
+    width: 33%;
+    height: auto;
+    z-index: 1;
+    transition: transform 0.7s;
+}
+
+.albumpicture:hover {
+    transform: translate(-50%, -50%) scale(1.02);
+}
 
 .albumname {
     font-size: 34px;
@@ -195,18 +190,15 @@ header {
     filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
 }
 
-
 .albumname a {
     color: inherit;
     text-decoration: none;
 }
 
-
 .albumname:hover {
     transform: scale(1.1);
     filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.2));
 }
-
 
 .iconLISTEN {
     position: absolute;
@@ -216,12 +208,10 @@ header {
     filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
 }
 
-
 .iconLISTEN:hover {
     transform: scale(1.1);
     filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.2));
 }
-
 
 .iconVIEWALL {
     position: absolute;
@@ -233,18 +223,64 @@ header {
     filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
 }
 
-
 .iconVIEWALL:hover {
     transform: scale(1.1);
     filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.2));
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.8);
+}
 
+.modal:target {
+    display: block;
+}
+
+.modal-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.modal-content {
+    margin: 1% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 700px;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+/* Video Page */
 .videopage {
     position: relative;
     top: -4px;
 }
     
+.titleVIDEO {
+    position: absolute;
+    top: 16%;
+    left: 11%;
+    width: 7%;
+    height: auto;
+}
 
 .MVpicture {
     position: absolute;
@@ -254,31 +290,169 @@ header {
     width: 56%;
     height: auto;
     z-index: 1;
+    transition: transform 0.7s, box-shadow 0.5s;
+}
+
+.MVpicture:hover {
+    transform: translate(-50%, -50%) scale(1.02);
+    box-shadow: 2px 2px 35px rgba(0, 0, 0, 0.5);
 }
 
 
-.titleVIDEO {
+.iconVIEWALL-2 {
+    position: absolute;
+    top: 73%;
+    left: 64%;
+    width: 14%;
+    height: auto;
+    transition: transform 0.7s, filter 0.5s;
+    filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
+}
+
+.iconVIEWALL-2:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.2));
+}
+
+
+
+/* Tour Page */
+.tourpage {
+    position: relative;
+    top: -8px;
+    z-index: 1;
+    height: 100vh; /* Ensure the tour page takes the full viewport height */
+
+}
+
+.tour-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.titleTOUR {
     position: absolute;
     top: 16%;
     left: 11%;
     width: 7%;
     height: auto;
+    z-index: 2;
+}
+
+.tour-content {
+    position: absolute;
+    padding: 40px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    z-index: 3;
+    top: 4%;
+}
+
+.tour-title {
+    font-size: 49px;
+    font-weight: 700;
+    margin-left: 15px;
+    margin-bottom: 60px;
+    letter-spacing: 14px;
+    text-align: center;
+}
+
+.tour-dates {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 3;
+}
+
+.line {
+    position: absolute;
+    left: 37%; /*adjust at here */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #ccc;
+    z-index: 1;
+}
+
+.date-venue {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3; /* Ensure text is above the line */
+}
+
+.date-venue p {
+    margin: 0;
+    padding: 0 10px;
+    font-size: 18px;
+}
+
+.date-venue p:nth-child(1) {
+    flex: 1;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.date-venue p:nth-child(2) {
+    flex: 2;
+    font-weight: 300;
+    text-align: left;
+    font-style: italic;
+    padding-right: 10px;
+}
+
+.date-venue p:nth-child(3) {
+    flex: 1.5;
+    text-align: right;
 }
 
 
-.MVname {
-    
+.iconVIEWALL-3 {
+    position: absolute;
+    top: 78%;
+    left: 64%;
+    width: 14%;
+    height: auto;
+    transition: transform 0.7s, filter 0.5s;
+    filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
+}
+
+.iconVIEWALL-3:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.2));
 }
 
 
-.officialMV {
-    
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: -8px;
 }
 
-
-.watch {
-    
+.footerbox {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
 }
 
+footer p {
+    margin: 10px;
+}
 
 
