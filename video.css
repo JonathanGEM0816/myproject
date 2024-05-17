@@ -135,12 +135,11 @@ body {
 
 
 footer {
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     text-align: center;
     padding: 20px 0;
     width: 100%;
-    margin-top: -8px;
 }
 
 .footerbox {
